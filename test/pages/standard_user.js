@@ -5,8 +5,39 @@ class standard_user{
         await standard_user_locators.BurgerMenu.click()
     }
     async clickResetSideBar(){
-        await standard_user_locators.ResetSideBar.click()
-        
+        await standard_user_locators.ResetSideBar.click()    
+    }
+
+    async AddingProductsToCart(){
+        await standard_user_locators.Backpack.click()
+        await standard_user_locators.BikeLight.click()
+        await standard_user_locators.BoltT_shirt.click()
+    }
+    async clickOnCartIcon(){
+        await standard_user_locators.CartIcon.click()
+    }
+    async clickOnCheckoutButton(){
+       await standard_user_locators.CheckoutButton.click()
+    }
+
+async EnterFirstName(firstName){
+    await standard_user_locators.CheckoutFirstName.setValue(firstName)
+}
+async EnterLastName(lastName){
+    await standard_user_locators.CheckoutLastName.setValue(lastName)
+}
+async EnterPostalCode(postalCode){
+    await standard_user_locators.CheckoutPostalCode.setValue(postalCode)
+}
+
+async FillCheckoutForm(firstName,lastName,postalCode){
+    await this.EnterFirstName(firstName)
+    await this.EnterLastName(lastName)
+    await this.EnterPostalCode(postalCode)
+    }
+
+    async ClickOnCheckoutContinueButton(){
+        await standard_user_locators.CheckoutContinueButton.click()
     }
 }
 module.exports = new standard_user
