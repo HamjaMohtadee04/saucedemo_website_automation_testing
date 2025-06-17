@@ -34,6 +34,40 @@ class standard_user{
     get CheckoutContinueButton(){
         return $("//input[@data-test='continue']")
     }
+
+    // validation of products
+    get ProductNamesOnCheckoutPage() {
+    return $$("//div[@class='inventory_item_name']");
 }
+get ProductPricesOnCheckoutPage() {
+    return $$("//div[@class='inventory_item_price']");
+}
+get ItemTotalPrice() {
+    return $("//div[@class='summary_subtotal_label']");
+}
+get TaxPrice() {
+    return $("//div[@class='summary_tax_label']");
+}
+get TotalWithTax() {
+    return $("//div[@class='summary_total_label']");
+}
+
+get FinishButton(){
+    return $("//button[@id='finish']")
+}
+
+get SuccessfulOrderMessage(){
+    return $("//h2[@data-test='complete-header']")
+}
+
+
+}
+
+
+
+
+
+
+
 
 module.exports = new standard_user()

@@ -39,5 +39,51 @@ async FillCheckoutForm(firstName,lastName,postalCode){
     async ClickOnCheckoutContinueButton(){
         await standard_user_locators.CheckoutContinueButton.click()
     }
+
+    //validation
+async getProductNamesText() {
+    const elements = await standard_user_locators.ProductNamesOnCheckoutPage;
+    const names = [];
+    for (let i = 0; i < elements.length; i++) {
+        const name = await elements[i].getText();
+        names.push(name);
+    }
+    return names;
+}
+
+async getProductPricesText() {
+    const elements = await standard_user_locators.ProductPricesOnCheckoutPage;
+    const prices = [];
+    for (let i = 0; i < elements.length; i++) {
+        const priceText = await elements[i].getText();
+        prices.push(priceText);
+    }
+    return prices;
+}
+
+async getItemTotalText() {
+    return await standard_user_locators.ItemTotalPrice.getText();
+}
+
+async getTaxText() {
+    return await standard_user_locators.TaxPrice.getText();
+}
+
+async getTotalWithTaxText() {
+    return await standard_user_locators.TotalWithTax.getText();
+}
+
+async getFinishButton(){
+    await standard_user_locators.FinishButton.click()
+}
+
+async getSuccessfulOrderMessage(){
+     return await standard_user_locators.SuccessfulOrderMessage.getText()
+}
+
+
+
+
+
 }
 module.exports = new standard_user
