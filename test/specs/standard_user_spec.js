@@ -82,13 +82,20 @@ describe("standard_user login test",()=>{
     await browser.pause(3000)
 });
  
-it("it should click the reset button and verify the successful order",async()=>{
+it("it should click the finish button and verify the successful order",async()=>{
     await standard_user.getFinishButton()
 
  const expectedOrderText = await standard_user.getSuccessfulOrderMessage();
 expect(expectedOrderText).toEqual(verifiedOrderText);
 
 await browser.pause(3000)
+})
+it("it should reset app state button and logout button, user should logout",async()=>{
+await standard_user.clickOnBurgerMenu()
+await standard_user.clickResetSideBar()
+await standard_user.ClickLogoutButton()
+await browser.pause(3000)
+
 })
 
 

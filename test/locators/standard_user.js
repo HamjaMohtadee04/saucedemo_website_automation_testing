@@ -60,6 +60,9 @@ get SuccessfulOrderMessage(){
     return $("//h2[@data-test='complete-header']")
 }
 
+get LogOutButton(){
+    return $("//a[@id='logout_sidebar_link']")
+}
 
 }
 

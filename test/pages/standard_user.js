@@ -81,7 +81,9 @@ async getSuccessfulOrderMessage(){
      return await standard_user_locators.SuccessfulOrderMessage.getText()
 }
 
-
+async ClickLogoutButton(){
+    return standard_user_locators.LogOutButton.click()
+}
 
 
 
