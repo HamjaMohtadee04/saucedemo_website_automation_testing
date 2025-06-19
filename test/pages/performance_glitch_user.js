@@ -1,6 +1,12 @@
 const performance_glitch_user_locators = require('../locators/performance_glitch_user');
 
 class performance_glitch_user{
+      async clickOnBurgerMenu(){
+            await performance_glitch_user_locators.BurgerMenu.click()
+        }
+        async clickResetAppState(){
+            await performance_glitch_user_locators.ResetAppState.click()    
+        }
     async FilterProducts(){
         await performance_glitch_user_locators.FilterButton.click()
     }
@@ -30,6 +36,15 @@ async getTaxText() {
 
 async getTotalWithTaxText() {
     return await performance_glitch_user_locators.totalPrice.getText();
+}
+async clickFinishButton(){
+    await performance_glitch_user_locators.FinishButton.click()
+}
+async getSuccessfulOrderMessage(){
+     return await performance_glitch_user_locators.SuccessfulOrderMessage.getText()
+}
+async Logout(){
+    await performance_glitch_user_locators.LogOutButton.click()
 }
 }
 

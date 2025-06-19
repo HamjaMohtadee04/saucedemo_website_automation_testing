@@ -1,4 +1,10 @@
 class performance_glitch_user{
+    get BurgerMenu(){
+        return $('//button[@id="react-burger-menu-btn"]')
+    }
+    get ResetAppState(){
+        return $('//a[@id="reset_sidebar_link"]')
+    }
   get FilterButton(){
     return $("//select[@data-test='product-sort-container']")
   }
@@ -29,6 +35,17 @@ class performance_glitch_user{
     get totalPrice() {
         return $("//div[contains(text(), 'Total:')]");
     }
+    get FinishButton(){
+    return $("//button[@id='finish']")
+}
+
+get SuccessfulOrderMessage(){
+    return $("//h2[@data-test='complete-header']")
+}
+
+get LogOutButton(){
+    return $("//a[@id='logout_sidebar_link']")
+}
 }
 
 module.exports = new performance_glitch_user

@@ -13,7 +13,7 @@ describe("performance_glitch_user login test",()=>{
 
     it("should login performance_glitch_user",async()=>{    
         await standard_user_login.LogIn(username,password)
-        await browser.pause(30000)
+     
     })
     
 it("should click on hamburger menu and reset app state",async()=>{
@@ -28,7 +28,6 @@ it("it should add first product to the cart and navigate to checkout page.Then c
        await performance_glitch_user.AddProduct()
         await performance_glitch_user.CartIcon()
         await performance_glitch_user.CheckOutButton()
-       
      })
       it("should click on checkout button then fill up the user confirmation form and navigate to final purchase",async()=>{
            await standard_user.FillCheckoutForm(firstName,lastName,postalCode)
@@ -49,10 +48,19 @@ it("it should add first product to the cart and navigate to checkout page.Then c
  
         expect(actualPrice).toEqual(expectedPrice);
         expect(total).toEqual(parseFloat((actualPrice + tax).toFixed(2)));
-
           })
 
-          
+it("should click on finish button and verify successful order message",async()=>{
+       await performance_glitch_user.clickFinishButton()
+        await performance_glitch_user.getSuccessfulOrderMessage()
+      await browser.pause(2000)
+     })
+it("it will reset the app state and logout the performance_glitch_user",async()=>{
+       await performance_glitch_user.clickOnBurgerMenu()
+        await performance_glitch_user.clickResetAppState()
+        await performance_glitch_user.Logout()
+      await browser.pause(2000)
+     })
  
 })
 
