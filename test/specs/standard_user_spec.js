@@ -22,8 +22,9 @@ describe("standard_user login test",()=>{
 
      it("should click on hamburger menu and reset app state",async()=>{
         await standard_user.clickOnBurgerMenu()
-        await standard_user.clickResetSideBar()
+        await standard_user.clickResetAppState()
      })
+     
      it("should add products to the cart and navigate to the cart",async()=>{
         await standard_user.AddingProductsToCart()
         await standard_user.clickOnCartIcon()
@@ -99,7 +100,7 @@ await browser.pause(3000)
 
 it("it should reset app state button and logout button, user should logout",async()=>{
 await standard_user.clickOnBurgerMenu()
-await standard_user.clickResetSideBar()
+await standard_user.clickResetAppState()
 await standard_user.ClickLogoutButton()
 await browser.pause(3000)
 

@@ -4,8 +4,8 @@ class standard_user{
     async clickOnBurgerMenu(){
         await standard_user_locators.BurgerMenu.click()
     }
-    async clickResetSideBar(){
-        await standard_user_locators.ResetSideBar.click()    
+    async clickResetAppState(){
+        await standard_user_locators.ResetAppState.click()    
     }
 
     async AddingProductsToCart(){

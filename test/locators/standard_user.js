@@ -4,7 +4,7 @@ class standard_user{
     get BurgerMenu(){
         return $('//button[@id="react-burger-menu-btn"]')
     }
-    get ResetSideBar(){
+    get ResetAppState(){
         return $('//a[@id="reset_sidebar_link"]')
     }
     get Backpack(){
