@@ -1,6 +1,7 @@
 
 const locked_out_user = './test/specs/locked_out_user_spec.js'
 const standard_user = "./test/specs/standard_user_spec.js"
+const performance_glitch_user = "./test/specs/performance_glitch_user_spec.js"
 exports.config = {
     //
     // ====================
@@ -23,7 +24,7 @@ exports.config = {
     // The path of the spec files will be resolved relative from the directory of
     // of the config file unless it's absolute.
     //
-    specs: [standard_user],
+    specs: [performance_glitch_user],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'

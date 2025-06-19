@@ -5,6 +5,12 @@ const password = "secret_sauce"
 const firstName = "hamja"
 const lastName = "mohtadee"
 const postalCode = 2210
+  const expectedNames = [
+        "Sauce Labs Backpack",
+        "Sauce Labs Bike Light",
+        "Sauce Labs Bolt T-Shirt"
+    ];
+    const expectedPrices = [29.99, 9.99, 15.99];
 const verifiedOrderText = "Thank you for your order!"
 describe("standard_user login test",()=>{
 
@@ -33,12 +39,12 @@ describe("standard_user login test",()=>{
      //validation
 
     it("should verify product names and total price on final checkout page", async () => {
-    const expectedNames = [
-        "Sauce Labs Backpack",
-        "Sauce Labs Bike Light",
-        "Sauce Labs Bolt T-Shirt"
-    ];
-    const expectedPrices = [29.99, 9.99, 15.99];
+    // const expectedNames = [
+    //     "Sauce Labs Backpack",
+    //     "Sauce Labs Bike Light",
+    //     "Sauce Labs Bolt T-Shirt"
+    // ];
+    // const expectedPrices = [29.99, 9.99, 15.99];
 
     // Validate product names
     const actualNames = await standard_user.getProductNamesText();
@@ -69,9 +75,9 @@ describe("standard_user login test",()=>{
         sum += actualPrices[i];
     }
 
-    const itemTotalText = await standard_user.getItemTotalText(); // "Item total: $55.97"
-    const taxText = await standard_user.getTaxText();             // "Tax: $4.48"
-    const totalText = await standard_user.getTotalWithTaxText();  // "Total: $60.45"
+    const itemTotalText = await standard_user.getItemTotalText(); 
+    const taxText = await standard_user.getTaxText();             
+    const totalText = await standard_user.getTotalWithTaxText();  
 
     const itemTotal = parseFloat(itemTotalText.replace("Item total: $", ""));
     const tax = parseFloat(taxText.replace("Tax: $", ""));
@@ -90,6 +96,7 @@ expect(expectedOrderText).toEqual(verifiedOrderText);
 
 await browser.pause(3000)
 })
+
 it("it should reset app state button and logout button, user should logout",async()=>{
 await standard_user.clickOnBurgerMenu()
 await standard_user.clickResetSideBar()
@@ -97,8 +104,6 @@ await standard_user.ClickLogoutButton()
 await browser.pause(3000)
 
 })
-
-
 
 })
 
