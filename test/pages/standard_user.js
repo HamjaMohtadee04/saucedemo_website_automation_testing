@@ -40,7 +40,6 @@ async FillCheckoutForm(firstName,lastName,postalCode){
         await standard_user_locators.CheckoutContinueButton.click()
     }
 
-    //validation
 async getProductNamesText() {
     const elements = await standard_user_locators.ProductNamesOnCheckoutPage;
     const names = [];
@@ -84,7 +83,6 @@ async getSuccessfulOrderMessage(){
 async ClickLogoutButton(){
     return standard_user_locators.LogOutButton.click()
 }
-
 
 
 }

@@ -5,11 +5,7 @@ const password = "secret_sauce"
 const firstName = "hamja"
 const lastName = "mohtadee"
 const postalCode = 2210
-  const expectedNames = [
-        "Sauce Labs Backpack",
-        "Sauce Labs Bike Light",
-        "Sauce Labs Bolt T-Shirt"
-    ];
+  const expectedNames = ["Sauce Labs Backpack","Sauce Labs Bike Light","Sauce Labs Bolt T-Shirt"];
     const expectedPrices = [29.99, 9.99, 15.99];
 const verifiedOrderText = "Thank you for your order!"
 describe("standard_user login test",()=>{
@@ -37,20 +33,11 @@ describe("standard_user login test",()=>{
        await browser.pause(5000)
      })
 
-     //validation
-
+     
     it("should verify product names and total price on final checkout page", async () => {
-    // const expectedNames = [
-    //     "Sauce Labs Backpack",
-    //     "Sauce Labs Bike Light",
-    //     "Sauce Labs Bolt T-Shirt"
-    // ];
-    // const expectedPrices = [29.99, 9.99, 15.99];
-
-    // Validate product names
     const actualNames = await standard_user.getProductNamesText();
     let nameMatchCount = 0;
-
+        // products name
     for (let i = 0; i < expectedNames.length; i++) {
         if (actualNames.includes(expectedNames[i])) {
             nameMatchCount++;
@@ -61,7 +48,7 @@ describe("standard_user login test",()=>{
 
     expect(nameMatchCount).toEqual(expectedNames.length);
 
-    // Validate prices
+    // product prices
     const priceTexts = await standard_user.getProductPricesText();
     const actualPrices = [];
     for (let i = 0; i < priceTexts.length; i++) {
@@ -70,7 +57,7 @@ describe("standard_user login test",()=>{
         expect(price).toEqual(expectedPrices[i]);
     }
 
-    // Validate item total
+    //total
     let sum = 0;
     for (let i = 0; i < actualPrices.length; i++) {
         sum += actualPrices[i];

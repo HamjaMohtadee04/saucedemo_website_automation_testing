@@ -1,5 +1,3 @@
-const login = require('./locked_out_user')
-
 class standard_user{
     get BurgerMenu(){
         return $('//button[@id="react-burger-menu-btn"]')
@@ -35,7 +33,6 @@ class standard_user{
         return $("//input[@data-test='continue']")
     }
 
-    // validation of products
     get ProductNamesOnCheckoutPage() {
     return $$("//div[@class='inventory_item_name']");
 }

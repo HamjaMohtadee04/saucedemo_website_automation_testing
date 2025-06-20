@@ -35,17 +35,20 @@ it("it should add first product to the cart and navigate to checkout page.Then c
             await browser.pause(5000)
           })
       it("it should valid the product name,product price and total price with tax on checkout page",async()=>{
+
           const expectedProductName = await performance_glitch_user.getProductName();
          expect(productName).toEqual(expectedProductName);
 
-        const priceText = await performance_glitch_user.getProductPrice(); // "$15.99"
-        const taxText = await performance_glitch_user.getTaxText();        // "Tax: $1.28"
-        const totalText = await performance_glitch_user.getTotalWithTaxText(); // "Total: $17.27"
+         //price
+   const priceText = await performance_glitch_user.getProductPrice(); 
+    const taxText = await performance_glitch_user.getTaxText();        
+        const totalText = await performance_glitch_user.getTotalWithTaxText(); 
 
         const actualPrice = parseFloat(priceText.replace("$", ""));
         const tax = parseFloat(taxText.replace("Tax: $", ""));
         const total = parseFloat(totalText.replace("Total: $", ""));
  
+        //total
         expect(actualPrice).toEqual(expectedPrice);
         expect(total).toEqual(parseFloat((actualPrice + tax).toFixed(2)));
           })
