@@ -11,6 +11,7 @@ describe("locked_out_user login test",()=>{
 
          const errorText = await locked_out_user_Account.showErrorMessage();
          expect(errorText).toEqual(errorMessage);
+         await browser.pause(3000)
 
     })
 
